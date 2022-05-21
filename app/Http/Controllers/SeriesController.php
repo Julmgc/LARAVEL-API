@@ -18,15 +18,16 @@ class SeriesController extends Controller
         return view(view:'series.create');
     }
 
-
     public function store(Request $request)
     {
-        $serieName = $request->input(key: 'name');
-        $serie = new Serie();
-        $serie->name = $serieName;
-        $serie->save();
+        Serie::create($request->all());
+        return to_route('series.index');
+    }
 
+    public function destroy(Request $request) 
+    {
+        Serie::destroy($request->serie);
 
-        return redirect(to: '/series');
+        return to_route(route: 'series.index');
     }
 }
