@@ -6,6 +6,7 @@
                 {{ $serie->name }}
                 <form action="{{route('series.destroy', $serie->id)}}" method="post">
                     @csrf
+                    @method('DELETE')
                     <button class="btn btn-danger btn-sm">
                         X
                     </button>

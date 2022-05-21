@@ -26,7 +26,7 @@ class SeriesController extends Controller
 
     public function destroy(Request $request) 
     {
-        Serie::destroy($request->serie);
+        Serie::destroy($request->series);
 
         return to_route(route: 'series.index');
     }
