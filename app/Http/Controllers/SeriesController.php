@@ -10,7 +10,7 @@ class SeriesController extends Controller
 {
     public function index(Request $request)
     {
-        $series = Series::all();
+        $series = Series::with(['seasons'])->get();
         $messageSuccess = $request->session()->get(key:'message.success');
         return view('series.index')->with('series', $series)->with('messageSuccess', $messageSuccess);
     }
