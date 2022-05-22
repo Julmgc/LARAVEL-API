@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Models\Series;
 use Illuminate\Http\Request;
+use App\Http\Requests\SeriesFormRequest;
+
 
 class SeriesController extends Controller
 {
@@ -18,7 +20,7 @@ class SeriesController extends Controller
         return view(view:'series.create');
     }
 
-    public function store(Request $request)
+    public function store(SeriesFormRequest $request)
     {
         $series = Series::create($request->all());
         return to_route('series.index')->with('message.success',"Series {$series->name} was added.");
@@ -35,7 +37,7 @@ class SeriesController extends Controller
         return view(view: 'series.edit')->with('series', $series);
     }
 
-    public function update(Series $series, Request $request)
+    public function update(Series $series, SeriesFormRequest $request)
     {
         $series->fill($request->all());
         $series->save();
