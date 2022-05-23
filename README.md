@@ -18,9 +18,11 @@ License: MIT</font>
 <div align ="center" font size="4">
 <font size="4">On your terminal, run:
 
-composer create-project laravel/laravel store-api
+make a copy of this project
 
-cd store-api
+git@github.com:Julmgc/Laravel-series.git
+
+cd Laravel-series
 
 To create the tables run:
 
@@ -34,5 +36,5 @@ Go on your web browser and type:
 
 http://localhost:8000/series
 
-You will be able to add series to the list, edit and delete them.
+You will be able to add series to the list, see how many seasons and episodes each series has, edit and delete them.
 </font>
